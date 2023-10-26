@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="logout_btn_style col-12">
+            <form action="{{ url_for('logout') }}" >
+                <input type="submit" value="Logout" class="btn btn-success  pull-left">
+            </form>
+        </div>
+
+        <div class="single_header col-12">
+            <h1>{{accounts}}</h1>
+            <h1>{{acc}}</h1>
+            <div class[="col-12">
+                <div id="welcomeMessageDiv"></div>
+                 <script>
+
+                    var username = "{{ accounts }}";
+                    if (username) {
+                        var welcomeMessageDiv = document.getElementById("welcomeMessageDiv");
+                        var welcomeMessage = document.createElement("h1");
+                        welcomeMessage.innerText = "Welcome, " + username + "!";
+                        welcomeMessageDiv.appendChild(welcomeMessage);
+                 </script>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
